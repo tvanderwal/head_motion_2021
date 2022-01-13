@@ -30,7 +30,7 @@ end
 
 % calculate number of FD spikes
 table_vars = ["r1", "r2", "mDM", "mDM_lasthalf"];
-fd_thresh = 0.2;
+fd_thresh = 0.3;
 for i = 1:length(hm_data)
     hm_data(i).fd_spikes = array2table([sum([hm_data(i).r1_fd] > fd_thresh), sum([hm_data(i).r2_fd] > fd_thresh), sum([hm_data(i).mDM_fd] > fd_thresh), sum([hm_data(i).mDM_full_fd(356:729)] > fd_thresh)], 'VariableNames', table_vars);
 end
